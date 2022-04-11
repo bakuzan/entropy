@@ -13,3 +13,7 @@ export function entropyToWords(entropy: number) {
 
   return `uberstrong! Hackers kneel before your godliness`;
 }
+
+export function roundTo2dp(num: number) {
+  return Math.round((num + Number.EPSILON) * 100) / 100;
+}

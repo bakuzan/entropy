@@ -3,7 +3,7 @@
 import chalk from 'chalk';
 import figlet from 'figlet';
 import { program } from 'commander';
-import { entropyToWords } from './utils';
+import { entropyToWords, roundTo2dp } from './utils';
 
 const lowerCase = /[a-z]/g;
 const upperCase = /[A-Z]/g;
@@ -59,7 +59,7 @@ async function run() {
 
   const entropy = passLength * Math.log2(poolSize);
 
-  console.log(`Entropy: `, entropy.toPrecision(4), ` bits`);
+  console.log(`Entropy: `, roundTo2dp(entropy), ` bits`);
   console.log(`Your password is `, entropyToWords(entropy));
 }
 
